@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI Cover Letter Assistant",
+  "version": "1.0.0",
+  "description": "Chrome extension for automating cover letter generation on Djinni and Work.ua using Gemini API.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "icons": {
+    "16": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon.svg",
+      "48": "icon.svg",
+      "128": "icon.svg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://djinni.co/jobs/*", "https://www.work.ua/jobs/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
